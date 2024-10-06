@@ -20,14 +20,18 @@ Before setting up the service, make sure you have the following:
 
 ## Installation
 
-1. **Clone the repository:**
+1. **Fork the Repository:**
+
+   Fork this repository to your GitHub account.
+
+2. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/realgolfgames/realgolfgames-logs.git
+   git clone https://github.com/your-username/realgolfgames-logs.git
    cd realgolfgames-logs
    ```
 
-2. **Install dependencies:**
+3. **Install dependencies:**
 
 Using NPM:
 
