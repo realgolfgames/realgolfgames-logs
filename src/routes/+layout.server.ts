@@ -1,5 +1,6 @@
+import type { ServerLoad } from '@sveltejs/kit';
 import { redirect } from '@sveltejs/kit';
 
-export const load: PageServerLoad = async () => {
+export const load: ServerLoad = async () => {
 	throw redirect(307, 'https://realgolf.games');
 };
