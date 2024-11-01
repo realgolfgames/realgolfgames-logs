@@ -1,5 +1,5 @@
 {
-	"name": "realgolfgames-logs",
+	"name": "@realgolfgames/realgolfgames-logs",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
