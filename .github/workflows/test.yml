@@ -28,25 +28,11 @@ jobs:
             ${{ runner.os }}-node-modules-
             ${{ runner.os }}-
 
-      - name: Cache Playwright dependencies
-        id: realgolfgames-logs-cache-playwright
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-playwright
-        with:
-          path: ~/.cache/ms-playwright
-          key: ${{ runner.os }}-playwright-deps-${{ env.cache-name }}-${{ hashFiles('**/pnpm-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-playwright-deps-${{ env.cache-name }}-
-            ${{ runner.os }}-playwright-deps-
-            ${{ runner.os }}-
-
       - name: Install dependencies
         if: steps.realgolfgames-logs-cache-node-modules.outputs.cache-hit != 'true'
         run: npm install
 
       - name: Install Playwright dependencies
-        if: steps.realgolfgames-logs-cache-playwright.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
 
       - name: Run tests
