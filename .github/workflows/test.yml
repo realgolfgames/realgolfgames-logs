@@ -20,6 +20,9 @@ jobs:
     #   SECRET_COOKIE_SECURE_SETTING: ${{ secrets.SECRET_COOKIE_SECURE_SETTING }}
     #   SECRET_INTERNAL_API_KEY: ${{ secrets.SECRET_INTERNAL_API_KEY }}
     #   SECRET_VALID_AUTH_TOKEN: ${{ secrets.SECRET_VALID_AUTH_TOKEN }}
+    env:
+      SECRET_MONGODB_CONNECTION_STRING: ${{ secrets.SECRET_MONGODB_CONNECTION_STRING }}
+      PUBLIC_YOUR_DOMAIN: ${{ secrets.PUBLIC_YOUR_DOMAIN }}
 
     steps:
       - name: Checkout repository
