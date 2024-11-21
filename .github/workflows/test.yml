@@ -14,17 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Cache npm
-        uses: actions/cache@v4
-        id: npm-cache
+        - uses: actions/checkout@v2
+        - name: Cache Node Modules
+        id: realgolfgames-logs-cache-node-modules
+        uses: actions/cache@v2
+        env: 
+            cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        id: npm-cache-dir
-        run: npm ci
+            path: ~/.npm
+            key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: |
+                ${{ runner.os }}-build-${{ env.cache-name }}-
+                ${{ runner.os }}-build-
+                ${{ runner.os }}-
+        
+        - name: Install dependencies
+        if: steps.realgolfgames-logs-cache-node-modules.outputs.cache-hit != 'true'
+        run: npm install
