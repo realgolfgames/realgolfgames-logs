@@ -15,6 +15,9 @@ importers:
         specifier: ^8.9.2
         version: 8.9.2
     devDependencies:
+      '@realgolfgames/types':
+        specifier: ^0.3.5
+        version: 0.3.5
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
         version: 3.3.1(@sveltejs/kit@2.14.0(@sveltejs/vite-plugin-svelte@3.1.2(svelte@4.2.19)(vite@5.4.11))(svelte@4.2.19)(vite@5.4.11))
@@ -210,6 +213,9 @@ packages:
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
+
+  '@realgolfgames/types@0.3.5':
+    resolution: {integrity: sha512-eiEhB0+R1sFZVHppOTbBxi2GVUGfaW7GBiAOn8RmT1mHtS+1Qtx23e11x7KbjAfkqYjbaexeBIfy9FDcrsWzQw==}
 
   '@rollup/plugin-commonjs@28.0.1':
     resolution: {integrity: sha512-+tNWdlWKbpB3WgBN7ijjYkq9X5uhjmcvyjEght4NmH5fAU++zfQzAJ6wumLS+dNcvwEZhKx2Z+skY8m7v0wGSA==}
@@ -827,6 +833,8 @@ snapshots:
       sparse-bitfield: 3.0.3
 
   '@polka/url@1.0.0-next.25': {}
+
+  '@realgolfgames/types@0.3.5': {}
 
   '@rollup/plugin-commonjs@28.0.1(rollup@4.24.4)':
     dependencies:
