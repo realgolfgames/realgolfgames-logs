@@ -14,7 +14,7 @@
 	"devDependencies": {
 		"@realgolfgames/types": "^0.3.5",
 		"@sveltejs/adapter-auto": "^3.3.1",
-		"@sveltejs/kit": "^2.14.0",
+		"@sveltejs/kit": "^2.15.3",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
 		"prettier": "^3.1.1",
 		"prettier-plugin-svelte": "^3.3.2",
