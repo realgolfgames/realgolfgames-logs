@@ -1,5 +1,6 @@
 import { verifyApiKey } from '$lib/server/api_key_middleware';
 import { connectToDB } from '$lib/server/db';
+import Log from '$lib/server/model';
 import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async ({ url, request }) => {
@@ -46,7 +47,7 @@ export const POST: RequestHandler = async ({ url, request }) => {
 	details.ipAddress = geolocation_data.query;
 	details.ipGeolocation = geolocation_data;
 
-	const log = {
+	const log = new Log({
 		level,
 		message,
 		userId,
@@ -57,9 +58,13 @@ export const POST: RequestHandler = async ({ url, request }) => {
 		environment,
 		correlationId,
 		tags
-	};
+	});
 
-	return new Response(JSON.stringify({ log, status: 200 }), { status: 200 });
+	await log.save();
+
+	return new Response(JSON.stringify({ message: 'Log saved successfully', status: 200 }), {
+		status: 200
+	});
 };
 
 async function getClientIP() {
